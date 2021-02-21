@@ -7,10 +7,12 @@ npm 用パッケージ等を CLI x ts-node で試すためのスターター.
 1. GitHub から import する(GitHubBox からは https://githubbox.com/hankei6km/my-starter-cli-ts-node)
 1. fork
 1. `sandbox.config.json` を開き node のバージョンを必要とするものへ変更.
+1. `import` / `require` の利用状況に合わせて設定変更(詳細は `src/index.ts` 参照).
 1. Server Control Panel を開き Restart Sandbox を実行.
+1. Connected to Sandbox のインジケータが緑になったら Restart Server を実行.
 1. 新しい terminal を開き `$ yarn upgrade-interactive` 等でパッケージを更新.
 
-`src/index.ts を変更すると terminal(「yarn start」タブ) 内で実行されているスクリプトが再起動されるので、必要に応じて編集やパッケージの追加を行う.
+これ以降は `src/index.ts を変更すると terminal(「yarn start」タブ) 内で実行されているスクリプトが再起動されるので、必要に応じて編集やパッケージの追加を行う.
 
 ## 環境
 
@@ -22,18 +24,20 @@ npm 用パッケージ等を CLI x ts-node で試すためのスターター.
 $ yarn add --dev typesscipt
 $ yarn add --dev ts-node
 $ yarn add --dev nodemon
+$ yarn add --dev @types/node
 ```
 
 - `tsconfig.json` を追加.
 - `nodemon.json` を追加.
 - `package.json` の start script を変更.
 - `package.json` に `"type": "module"` を追加.
-- `src/index.ts` を追加
+- `src/index.ts` を追加.
+- Node version を 14 へ変更.
 - その他、Sandbox info(`package.json`の`name`) の調整など.
 
 ## 既知の問題
 
-- terminal に "ExperimentalWarning: --experimental-loader isan experimental feature. This feature could change at any time" が表示される:
+- terminal に "ExperimentalWarning: --experimental-loader isan experimental feature. This feature could change at any time" が表示される.
 
 ## ライセンス
 
